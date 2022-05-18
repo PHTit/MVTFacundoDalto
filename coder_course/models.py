@@ -1,7 +1,7 @@
 from django.db import models
 
 class Relatives(models.Model):
-    edad = models.IntegerField()
+    age = models.IntegerField()
     name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     birth_date = models.DateField()
