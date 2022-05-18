@@ -40,7 +40,7 @@ def post_course(
     render = template.render(context_dict)
     return HttpResponse(render)
 
-def all_relatives(self, id_rel: int, name: str, last_name: str, birth_date: datetime ):
+def all_relatives(self, Edad: int, name: str, last_name: str, birth_date: datetime ):
 
     template = loader.get_template('all_relatives.html')
 
@@ -48,7 +48,7 @@ def all_relatives(self, id_rel: int, name: str, last_name: str, birth_date: date
 
     print('relatives', type(relatives), '/n', relatives)
     context_dict = {
-        'id_rel': id_rel,
+        'Edad': Edad,
         'name': name,
         'last_name': last_name,
         'birth_date': birth_date
