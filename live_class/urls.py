@@ -37,5 +37,5 @@ urlpatterns = [
     path('get-course/<int:id>', get_course),
     path('post-course/<str:name>/<int:code>', post_course),
     path('all-courses/', all_courses),
-    path('all-relatives/', Relatives),
+    path('all-relatives/', all_relatives),
 ]

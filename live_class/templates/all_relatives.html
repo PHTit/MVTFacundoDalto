@@ -7,14 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>The list of relatives in DB</h1>
+    <h1>List of relatives in DB</h1>
     <hr></hr>
     <ul>
-        {% for person in relatives %}
-            <li>Age: {{relatives.age}}</li>
+        {% for relative in relatives %}
             <li>Name: {{relative.name}}</li>
             <li>Last Name: {{relative.last_name}}</li>
+            <li>Age: {{relatives.age}}</li>
             <li>Birth: {{relative.birth_date}}</li>
+            <li></li>
         {% endfor %}
     </ul>
 </body>

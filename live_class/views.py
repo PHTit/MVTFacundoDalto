@@ -39,8 +39,27 @@ def post_course(
 
     render = template.render(context_dict)
     return HttpResponse(render)
+#
+#def all_relatives(self, age: int, name: str, last_name: str, birth_date: datetime ):
+#
+#    template = loader.get_template('all_relatives.html')
+#
+#    relatives = Relatives.objects.all()
+#
+#    print('relatives', type(relatives), '/n', relatives)
+#    context_dict = {
+#        'age': age,
+#        'name': name,
+#        'last_name': last_name,
+#        'birth_date': birth_date
+#
+#    }
+#
+#    render = template.render(context_dict)
+#    return HttpResponse(render)
+#
 
-def all_relatives(self, age: int, name: str, last_name: str, birth_date: datetime ):
+def all_relatives(self):
 
     template = loader.get_template('all_relatives.html')
 
@@ -48,11 +67,7 @@ def all_relatives(self, age: int, name: str, last_name: str, birth_date: datetim
 
     print('relatives', type(relatives), '/n', relatives)
     context_dict = {
-        'age': age,
-        'name': name,
-        'last_name': last_name,
-        'birth_date': birth_date
-
+        'relatives': relatives
     }
 
     render = template.render(context_dict)
@@ -97,19 +112,6 @@ def all_courses(self):
     print('courses', type(courses), '/n', courses)
     context_dict = {
         'courses': courses
-    }
-
-    render = template.render(context_dict)
-    return HttpResponse(render)
-
-def get_course(self, id: int):
-
-    template = loader.get_template('get_course.html')
-
-    course = Course.objects.get(pk=id)
-
-    context_dict = {
-        'course': course
     }
 
     render = template.render(context_dict)
