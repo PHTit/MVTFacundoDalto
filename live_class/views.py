@@ -4,12 +4,12 @@ from django.http import HttpResponse
 from django.template import Template, Context
 from django.template import loader
 
-from coder_course.models import Course
+from coder_course.models import Course, Relatives
 
 def template_using_context(
     self, name: str = 'Name', last_name: str = 'Last_name'):
 
-    miHtml = open("/home/jfpinedap/coderhouse/class_18_Django_II/live_class/live_class/templates/template.html")
+    miHtml = open("C:/Users/fmdalto/Desktop/Facu/Python/Live_class_app/django-coderhouse-project/live_class/templates/template.html")
     template = Template(miHtml.read())
     miHtml.close()
 
@@ -23,6 +23,41 @@ def template_using_context(
     my_context = Context(context_dict)
     render = template.render(my_context)
     return HttpResponse(render)
+
+
+def post_course(
+    self, name: str = 'course', code: int = 0):
+
+    template = loader.get_template('post_course.html')
+
+    course = Course(name=name, code=code)
+    course.save() # save into the DB
+
+    context_dict = {
+        'course': course
+    }
+
+    render = template.render(context_dict)
+    return HttpResponse(render)
+
+def all_relatives(self, id_rel: int, name: str, last_name: str, birth_date: datetime ):
+
+    template = loader.get_template('all_relatives.html')
+
+    relatives = Relatives.objects.all()
+
+    print('relatives', type(relatives), '/n', relatives)
+    context_dict = {
+        'id_rel': id_rel,
+        'name': name,
+        'last_name': last_name,
+        'birth_date': birth_date
+
+    }
+
+    render = template.render(context_dict)
+    return HttpResponse(render)
+
 
 def template_using_loader(
     self, name: str = 'Name', last_name: str = 'Last_name'):
@@ -59,7 +94,7 @@ def all_courses(self):
 
     courses = Course.objects.all()
 
-    print('courses', type(courses), '\n', courses)
+    print('courses', type(courses), '/n', courses)
     context_dict = {
         'courses': courses
     }

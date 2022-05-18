@@ -1,5 +1,11 @@
 from django.db import models
 
+class Relatives(models.Model):
+    id_rel = models.IntegerField()
+    name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    birth_date = models.DateField()
+
 
 class Course(models.Model):
     name = models.CharField(max_length=40)

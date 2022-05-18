@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from coder_course.models import Relatives
+
 
 from live_class.views import (
     template_using_context,
@@ -23,6 +25,7 @@ from live_class.views import (
     post_course,
     all_courses,
     index,
+    all_relatives,
 )
 
 urlpatterns = [
@@ -34,4 +37,5 @@ urlpatterns = [
     path('get-course/<int:id>', get_course),
     path('post-course/<str:name>/<int:code>', post_course),
     path('all-courses/', all_courses),
+    path('all-relatives/', Relatives),
 ]

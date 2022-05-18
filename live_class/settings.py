@@ -56,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/jfpinedap/coderhouse/class_19_playground_I/django-coderhouse-project/live_class/templates/',
+            'C:/Users/fmdalto/Desktop/Facu/Python/Live_class_app/django-coderhouse-project/live_class/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
